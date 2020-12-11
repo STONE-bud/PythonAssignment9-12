@@ -1,0 +1,13 @@
+class point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other): 
+        if isinstance(other, point):
+            return point(self.x + other.x, self.y + other.y)
+        elif isinstance(other, tuple):
+            return point(self.x + other[0], self.y + other[1])
+
+    def __repr__(self):
+        return f'Point ({self.x}, {self.y})'
